@@ -1,0 +1,43 @@
+<!DOCTYPE hmtl>
+<html>
+<head>
+	<meta charset="UTF-8" >
+	<title>My Mad Lib</title>
+</head>
+
+<body>
+
+	<P align="center">Down by the <span id="noun">[noun]</span>, we <span id="adjective">[adjective]</span> in teams, counting off by ones and twoss. I tried to shift in line so I could be on the same team as Sarah Stevens. It worked. Not that <span id="pronoun">[pronoun]</span> was going to <span id="verb">[verb]</span> to her or anything, not after her bombshell during thruth or dare, <span id="conjunction">[conjunction]</span> for some reason it seemed important that we be on the same team, working <span id="adverb">[adverb]</span> to capture the same flag.</P>
+	
+	<script>
+	// Our JS code goes here	
+	// store each prompt response in a variable.
+    var noun = prompt("Enter a noun");
+    var adjective = prompt("Enter a adjective");
+    var pronoun  = prompt("Enter a pronoun");
+    var verb = prompt("Enter a verb");
+    var conjunction = prompt("Enter a conjunction");
+    var adverb = prompt("Enter a adverb");
+
+    //log out each response from the user. to make the output more readable, we'll add a string before each variable
+    document.getElementById('noun').innerHTML = noun;
+    document.getElementById('adjective').innerHTML = adjective;
+    document.getElementById('pronoun').innerHTML = pronoun;
+    document.getElementById('verb').innerHTML = verb; 
+    document.getElementById('conjunction').innerHTML = conjunction;
+    document.getElementById('adverb').innerHTML = adverb;
+
+    //Style the parts of speech differently from each other and/or the main paragraph
+    document.body.style.color = "blue";
+    document.getElementById("noun").style.color = "orange";
+    document.getElementById("adjective").style.color = "red";
+    document.getElementById("pronoun").style.color = "purple";
+    document.getElementById("verb").style.color = "ForestGreen";
+    document.getElementById("conjunction").style.color = "MediumAquaMarine";
+    document.getElementById("adverb").style.color = "coral";
+
+	</script>
+
+</body>
+
+</html>
