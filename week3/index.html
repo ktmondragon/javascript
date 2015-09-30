@@ -8,7 +8,7 @@
 <style>
 #eight-ball{
     width:500px;
-    height: 500px;
+    height: 530px;
     margin: 25px auto;
     border: 2px solid #555;
     box-shadow: 5px 5px #555;
@@ -29,10 +29,7 @@ button{
     color: #000;
 }
 img{
-    position: absolute;
-    left: 420px;
-    top: 130px;
-    z-index: -1;
+    position: relative;
 }
 </style>
 </head>
@@ -56,7 +53,13 @@ img{
         var numberOfAnswers = [answer];
 
         // Answers the 8 Ball can return
-        var answers = ['<img src="images/yes.png"/>', '<img src="images/no.png"/>', '<img src="images/probably.png"/>', '<img src="images/mysourcessayno.png"/>', '<img src="images/mostlikely.png"/>', '<img src="images/withoutadoubt.png"/>', '<img src="images/itiscertain.png"/>'];
+        var answers = ['<img src="images/yes.png"/>', 
+        '<img src="images/no.png"/>', 
+        '<img src="images/probably.png"/>', 
+        '<img src="images/mysourcessayno.png"/>', 
+        '<img src="images/mostlikely.png"/>', 
+        '<img src="images/withoutadoubt.png"/>', 
+        '<img src="images/itiscertain.png"/>'];
           
         var numberOfAnswers = answers.length;
  
