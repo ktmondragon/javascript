@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Magic 8 Ball</title>
+<link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+
+<style>
+#eight-ball{
+    width:500px;
+    height: 500px;
+    margin: 25px auto;
+    border: 2px solid #555;
+    box-shadow: 5px 5px #555;
+    text-align: center;
+}
+button{
+    padding: 18px 10px 18px 10px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    color: white;
+    background-color: #0000E3;
+    font-size: 20px;
+    margin-top: 5px;
+}
+#question{
+    font-family: 'Rock Salt', cursive;
+    font-size: 14px;
+    color: #000;
+}
+img{
+    position: absolute;
+    left: 420px;
+    top: 130px;
+    z-index: -1;
+}
+</style>
+</head>
+
+<body>
+    <div id="eight-ball">
+         <button onclick="shake()">Shake</button>
+        <p id="question"></p>
+        <p id="answer"></p>
+    <div>
+<script>
+   
+    // Called when we click the shake button 
+    function shake(){
+        // The question we asked
+        var question = prompt("Ask me a question");
+        var questionText = document.getElementById('question');
+        questionText.innerHTML = question;
+
+        // Number of possible answers  
+        var numberOfAnswers = [answer];
+
+        // Answers the 8 Ball can return
+        var answers = ['<img src="images/yes.png"/>', '<img src="images/no.png"/>', '<img src="images/probably.png"/>', '<img src="images/mysourcessayno.png"/>', '<img src="images/mostlikely.png"/>', '<img src="images/withoutadoubt.png"/>', '<img src="images/itiscertain.png"/>'];
+          
+        var numberOfAnswers = answers.length;
+ 
+
+        // Answer returned by our 8 Ball
+        var chosenAnswer = getAnswerNumber(numberOfAnswers);        
+        displayAnswer(chosenAnswer);
+
+        // Returns a number based on the number of sides
+        function getAnswerNumber(answerCount){
+            var number = getRandomInt(0,answerCount);
+            return number;
+        }
+
+        // Returns a random integer between two numbers
+        function getRandomInt(min,max){
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        // Show our answer in the document 
+        function displayAnswer(answer) {
+
+            // Access the DOM element we want to to change
+            var fortuneText = document.getElementById('answer');
+
+            if ( answers == answers ) {
+                fortuneText.innerHTML = answers[answer];
+            }
+          
+        }
+
+    }
+</script>
+</body>
+
+</html>
