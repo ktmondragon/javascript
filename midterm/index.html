@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+        <title>My Portfolio</title>
+        <link href="stylesheet.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
+         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+       
+    </head>
+
+<body>
+
+
+    <div id="wrapper">
+                                                    
+        <div id="header">
+            <h1>Katherine</h1>                                
+                            
+        <div id="menu">
+    <ul>
+        <li><a href="index.html"><img src="images/home.png" alt="home" class="icons" width="40" height="40"></a>
+        </li>
+        <li><a href="portfolio.html"><img src="images/portfolio.png" alt="portfolio" class="icons" width="40" height="40"></a>
+            <ul>
+                <li><a href="Illustrator.html">Illustrator</a></li>
+                <li><a href="indesign.html">InDesign</a></li>
+                <li><a href="Photoshop.html">Photoshop</a></li>
+            </ul>
+        </li>
+        <li><a href="about.html"><img src="images/about.png" alt="about" class="icons" width="40" height="40"></a>
+            <ul>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+
+        <div id="content">
+            <section class="holder">
+
+                <div id="holder">
+
+                <img id="slideshow" src="images/bridge.jpg"/>
+                </div>
+
+
+
+            </section>
+            <artcle class="rightsection">
+
+    <div class="toggle">
+
+
+    <a href="#" title="Images Description" class="toggle-trigger">Images Description</a>
+
+ 
+    <div class="toggle-content">
+        <p>These photos were taken with an Iphone 5 which the resolution is not the best as a professional camara, but you can still appreciate the beauty of nature.</p>
+    </div>
+</div>
+
+<div class="toggle">
+
+  
+    <a href="#" title="Places" class="toggle-trigger">Places</a>
+
+    <div class="toggle-content">
+        <p>Dumbo Park - Brooklyn, Niagara Falls - Canada, Flushing Park - Queens.</p>
+    </div>
+</div>
+
+         
+       </article>
+
+        <div id="footer">
+        </div>
+
+
+    <script>
+ 
+    $('div#menu > ul > li').hover(function() {
+    //effect when the user hovers over the menu
+    //first hide the menu item, since the CSS displays it - then slide it down.
+    $(this).children('ul').hide().slideDown();
+    }, function() {
+    //effect when the user leaves the current menu area - fade out
+    $(this).children('ul').fadeOut();
+    });
+
+
+     $( "h1" )
+    .on( "mouseenter", function() {
+    $( this ).css({
+      "background-color": "#226AF0",
+        });
+    })
+    .on( "mouseleave", function() {
+    var styles = {
+      "background-Color" : "#08C9BD",
+    };
+    $( this ).css( styles );
+    });
+
+    images = [
+
+     'images/bridge.jpg',
+     'images/parquedelcafe.jpg',
+     'images/downtown.jpg',
+     'images/tribeca.jpg',
+     'images/city.jpg',
+     'images/hudsonriverh.jpg',
+     'images/niagarafall.jpg',
+     'images/nightworld.jpg',
+     'images/Purpletree.jpg',
+     'images/sky.jpg'
+       ];
+
+setInterval(forwardImage, 4000);
+
+
+//This function will find the key for the current Image
+function currentImageKey() {
+    i = jQuery.inArray($('#slideshow').attr('src'), images);
+    return i;
+}
+
+//This function will move the slideshow forward one
+function forwardImage() {
+    currentImageKey();
+    if (i < images.length - 1) {
+        changeImage(i + 1);
+    } else {
+        changeImage(0);
+    }
+}
+
+//This function will change to image to whatever the variable i passes to it
+function changeImage(i) {
+    $('#slideshow').stop().animate({
+        opacity: 0,
+    }, 200, function() {
+        $('#slideshow').attr('src', images[i]);
+        $('#holder img').load(function() {
+            $('#slideshow').stop().animate({
+                opacity: 1,
+            }, 200)
+        })
+    })
+}
+
+
+jQuery(document).ready(function($) { 
+
+    // Find the toggles and hide their content
+    $('.toggle').each(function(){
+        $(this).find('.toggle-content').hide();
+    });
+
+    // When a toggle is clicked (activated) show their content
+    $('.toggle a.toggle-trigger').click(function(){
+        var el = $(this), parent = el.closest('.toggle');
+
+        if( el.hasClass('active') )
+        {
+            parent.find('.toggle-content').slideToggle();
+            el.removeClass('active');
+        }
+        else
+        {
+            parent.find('.toggle-content').slideToggle();
+            el.addClass('active');
+        }
+        return false;
+    });
+
+});
+
+         </script>
+
+     </div>
+
+    </body>
+
+</html>

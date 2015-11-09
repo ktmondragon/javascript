@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+        <title>My Portfolio</title>
+        <link href="stylesheet.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Dancing+Script:700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
+         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+       
+    </head>
+
+<body>
+
+
+    <div id="wrapper">
+                                                    
+        <div id="header">
+            <h1>Katherine</h1>                                
+                            
+        <div id="menu">
+    <ul>
+        <li ><a href="index.html"><img src="images/home.png" alt="home" class="icons" width="40" height="40"></a>
+        </li>
+        <li><a href="portfolio.html"><img src="images/portfolio.png" alt="portfolio" class="icons" width="40" height="40"></a>
+            <ul>
+                <li><a href="Illustrator.html">Illustrator</a></li>
+                <li><a href="indesign.html">InDesign</a></li>
+                <li><a href="Photoshop.html">Photoshop</a></li>
+            </ul>
+        </li>
+        <li><a href="about.html"><img src="images/about.png" alt="about" class="icons" width="40" height="40"></a>
+            <ul>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+
+        <div id="content">
+            <section class="">
+
+                <div id="r">
+
+                </div>
+
+
+
+            </section>
+            <artcle class="">
+
+   
+
+         
+       </article>
+
+        <div id="footer">
+        </div>
+
+
+    <script>
+ 
+    $('div#menu > ul > li').hover(function() {
+    //effect when the user hovers over the menu
+    //first hide the menu item, since the CSS displays it - then slide it down.
+    $(this).children('ul').hide().slideDown();
+    }, function() {
+    //effect when the user leaves the current menu area - fade out
+    $(this).children('ul').fadeOut();
+    });
+
+
+     $( "h1" )
+    .on( "mouseenter", function() {
+    $( this ).css({
+      "background-color": "#226AF0",
+        });
+    })
+    .on( "mouseleave", function() {
+    var styles = {
+      "background-Color" : "#08C9BD",
+    };
+    $( this ).css( styles );
+    });
+
+   
+         </script>
+
+     </div>
+
+    </body>
+
+</html>

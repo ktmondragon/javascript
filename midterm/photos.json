@@ -1,0 +1,30 @@
+{
+    "pictures": [
+      {"photo": "bridge.jpg",
+       "caption": "Bridge",
+       "loc": "images/bridge.jpg"
+      },
+      {"photo": "dayworld.jpg",
+       "caption": "The World",
+      },
+      {"photo": "downtown.jpg",
+       "caption": "Downtown",
+      },
+      {"photo": ".jpg",
+       "caption": ".jpg",
+      },
+      {"photo": ".jpg",
+       "caption": ".jpg",
+      },
+      {"photo": ".jpg",
+       "caption": ".jpg",
+      },
+      {"photo": ".jpg",
+       "caption": ".jpg",
+      },
+      {"photo": ".jpg",
+       "caption": ".jpg",
+      }
+    ]
+}
+
