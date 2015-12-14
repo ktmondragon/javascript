@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Images Search</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script></p>
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <style>
+
+  body{
+        background-color: #ff0000;
+    }
+    h1{
+        font-family: 'Kaushan Script', cursive;
+        color: #000;
+        width: 400px;
+        margin-left: 350px;
+    }
+    p{
+      width: 200px;
+      margin-left: 450px;
+      
+    }
+    #photos{
+      padding-left: 15px;
+      padding-top: 10px;
+    }
+ 
+    .content {
+        display: block;
+        background: #FFF;
+        width: 1000px;
+        height: 1200px;
+        margin-top: 10px;
+        margin-left: 60px;
+    }
+    #box{
+      margin-left: 440px;
+    }
+    #Button{
+      margin-left:590px;
+      margin-top: -19px;
+      display: block;
+    }
+
+
+  </style>
+
+  <script>
+
+  function showpics(){
+
+    var pic= $("#box").val();
+    $.getJSON('http://api.flickr.com/services/feeds/photos_public.gne?tags='
+      +pic+"&tagmode=any&format=json&jsoncallback=?",
+      function(data){ $("#photos").hide().html(data).fadeIn('fast');
+
+
+    $.each(data.items, function(i,item) {
+      $("<img/>").attr("src", item.media.m).appendTo("#photos");
+    });
+  })
+};
+    
+  </script>
+</head>
+
+<body>
+  <div>
+  <h1>Search Images from Flickr</h1>
+  <p>
+    <p>Ready for your search</p>
+    
+    <input id="box" type="text">
+    <input id="Button" title="show" onclick="showpics()" type="button" value="show">
+    <div class="content">
+    <div id="photos"></div>
+  </div>
+  </p>
+</div>
+    
+</body>
+
+</html>
